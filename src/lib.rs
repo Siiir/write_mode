@@ -16,7 +16,7 @@ use serde::{Deserialize, Serialize};
 /// ```rust
 /// use std::io::Write;
 /// use write_mode::WriteMode;
-/// 
+///
 /// let user_input = "u"; // Update (overwrite) existing object (file). Fail if doesn't exist.
 /// let mode: WriteMode = user_input.parse().unwrap(); // Parses many formats & shorthands.
 /// let mut file = mode.std_open("/dev/null").unwrap(); // Some existing file.
