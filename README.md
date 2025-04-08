@@ -2,9 +2,9 @@
 
 ## 🎯 Overview
 
-An open-source Rust library, which centralizes file write modes to allow easier development when interacting with the file system.
+An open-source Rust library, which defines file write modes to allow easier development when interacting with the file system.
 
-Supports both `fs_err` and `std::fs`
+Supports both `fs_err` and `std::fs`.
 
 ## 📋 Prerequisites
 

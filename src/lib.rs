@@ -11,6 +11,17 @@ use serde::{Deserialize, Serialize};
 /// - `CreateNew`: Creates a new file, fails if the file already exists.
 /// - `UpdateExisting`: Opens an existing file without creating a new one, fails if the file does not exist.
 /// - `ClassicWrite`: Opens a file for writing, creating it if it doesn't exist.
+///
+/// ## Examples
+/// ```rust
+/// use std::io::Write;
+/// use write_mode::WriteMode;
+/// 
+/// let user_input = "u"; // Update (overwrite) existing object (file). Fail if doesn't exist.
+/// let mode: WriteMode = user_input.parse().unwrap(); // Parses many formats & shorthands.
+/// let mut file = mode.std_open("/dev/null").unwrap(); // Some existing file.
+/// file.write_all(b"Some new content for the file.").unwrap();
+/// ```
 #[derive(
     // CRUD-C: Constructors
     Deserialize,
