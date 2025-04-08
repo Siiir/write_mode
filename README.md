@@ -66,20 +66,22 @@ If the workflow fails, the branch will be reset to state before this commit usin
 - If you want to discard all changes from the failing commit, run `git pull --rebase`
 - If you want to introduce some fixes, just create another commit and push it to try one more time
 
-## 🤝 Contributing Guildline
+## 🤝 Contributing Guideline
 
 1. 🍴 **`git clone` the repository**
 2. 🌿 **Create new branch from main** (`git checkout -b <branch-name>`)
-3. ✏️ **Make your changes**
+3. ✏️ **Make your changes** (`git add .; git commit -m <msg>`)  
+   **Remember** about subissue closing. ("\<msg\>. Closes #K")
 4. 🧪 **Run the tests** (`cargo test`)
 5. 💅 **Ensure your code is formatted** (`cargo fmt`)
 6. 💾 **Commit your changes** (`git commit -m 'Add some amazing feature'`)
 7. 📤 **Push to the branch** (`git push origin <branch-name>`)
-8. 🔄 **Open a Pull Request**
+8. 🔄 **Open a Merge/Pull Request**  
+   **Remember** about closing the MR's target issue "\<description\>.\n Closes #N"
 
 ### 🎯 Issue Closing
 
 When working on issues, follow these guidelines:
 
-- **Merge Requests** should target and close the main issue they're addressing:
+- **Merge/Pull Requests** should target and close the main issue they're addressing:
 - **Individual commits** should close sub-issues or tasks:
