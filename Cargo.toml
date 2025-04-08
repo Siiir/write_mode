@@ -1,6 +1,12 @@
 [package]
 name = "write_mode"
+description = "simple API for handling file write modes using either std lib or fs-err"
+repository = "https://github.com/Siiir/write_mode"
+license = "MIT"
 version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+strum = { version = "0.27.1", features = ["derive"] }
+serde = { version = "1.0.219", features = ["derive"] }
+fs-err = "3.1.0"
