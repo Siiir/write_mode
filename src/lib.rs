@@ -17,7 +17,7 @@ use serde::{Deserialize, Serialize};
 /// use std::io::Write;
 /// use write_mode::WriteMode;
 ///
-/// let user_input = "u"; // Update (overwrite) existing object (file). Fail if doesn't exist.
+/// let user_input = "o"; // Overwrite existing object (file content). Fail if doesn't exist.
 /// let mode: WriteMode = user_input.parse().unwrap(); // Parses many formats & shorthands.
 /// let mut file = mode.std_open("/dev/null").unwrap(); // Some existing file.
 /// file.write_all(b"Some new content for the file.").unwrap();
@@ -50,12 +50,12 @@ pub enum WriteMode {
     CreateNew,
 
     #[strum(
-        serialize = "UpdateExisting",
-        serialize = "Update",
-        serialize = "U",
+        serialize = "OverwriteExisting",
+        serialize = "Overwrite",
+        serialize = "O",
         ascii_case_insensitive
     )]
-    UpdateExisting,
+    OverwriteExisting,
 
     #[strum(
         serialize = "ClassicWrite",
@@ -109,7 +109,7 @@ impl WriteMode {
             Self::CreateNew => {
                 options.create_new(true).create(true);
             }
-            Self::UpdateExisting => {
+            Self::OverwriteExisting => {
                 options.create_new(false).create(false);
             }
             Self::ClassicWrite => {
