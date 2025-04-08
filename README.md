@@ -1,0 +1,85 @@
+# Write Mode
+
+## 🎯 Overview
+
+An open-source Rust library, which centralizes file write modes to allow easier development when interacting with the file system.
+
+Supports both `fs_err` and `std::fs`
+
+## 📋 Prerequisites
+
+- 📦 `cargo` including `fmt` subcommand
+
+## 🔄 Continuous Integration
+
+This project uses GitHub Actions for continuous integration. The CI pipeline includes:
+
+- ✅ Running all tests (`cargo test --all-targets`)
+- 📚 Documentation checks (`cargo rustdoc`)
+- 🤖 Automatic formatting fixes with `cargo fmt`
+- 💅 Code formatting check `cargo fmt --check`
+- ⏪ Automatic reversion of commits that fail CI checks
+
+### 🧹 Code Style Guide (rustfmt)
+
+This project uses a custom [rustfmt](https://github.com/rust-lang/rustfmt) configuration to enforce consistent code formatting. Below are the key formatting rules we are following:
+
+#### 🛠️ Formatting Rules
+
+| Setting                          | Value       | Description                                        |
+| -------------------------------- | ----------- | -------------------------------------------------- |
+| `max_width`                      | `100`       | Maximum width of a line before breaking            |
+| `hard_tabs`                      | `false`     | Use spaces instead of tabs                         |
+| `tab_spaces`                     | `4`         | Number of spaces per indentation level             |
+| `newline_style`                  | `"Auto"`    | Use system-native line endings (LF/CRLF)           |
+| `use_small_heuristics`           | `"Default"` | Enables formatting heuristics for small constructs |
+| `fn_call_width`                  | `60`        | Max width for function calls on a single line      |
+| `attr_fn_like_width`             | `70`        | Max width for attribute-like function macros       |
+| `struct_lit_width`               | `18`        | Max width for struct literals                      |
+| `struct_variant_width`           | `35`        | Max width for struct variants in enums             |
+| `array_width`                    | `60`        | Max width for arrays on a single line              |
+| `chain_width`                    | `60`        | Max width for method chains on a single line       |
+| `single_line_if_else_max_width`  | `50`        | Max width for single-line `if/else` expressions    |
+| `single_line_let_else_max_width` | `50`        | Max width for single-line `let...else` expressions |
+| `reorder_imports`                | `true`      | Automatically sort `use` statements                |
+| `reorder_modules`                | `true`      | Automatically sort module declarations             |
+| `fn_params_layout`               | `"Tall"`    | Format function params vertically (one per line)   |
+| `edition`                        | `2015`      | Rust edition for parsing and formatting            |
+| `style_edition`                  | `2015`      | Edition used for formatting style rules            |
+
+### 🧪 Formatting Check in CI
+
+Formatting is checked in CI using:
+
+```bash
+cargo fmt --check
+```
+
+Run `cargo fmt` before push to automatically format your code.
+**The CI workflow will fail if your code does not follow the formatting rules.**
+
+### Reset in the CI
+
+If the workflow fails, the branch will be reset to state before this commit using `git reset --hard HEAD~1` <br />
+**How to work after this on the local environment?**
+
+- If you want to discard all changes from the failing commit, run `git pull --rebase`
+- If you want to introduce some fixes, just create another commit and push it to try one more time
+
+## 🤝 Contributing Guildline
+
+1. 🍴 **`git clone` the repository**
+2. 🌿 **Create new branch from main** (`git checkout -b <branch-name>`)
+3. ✏️ **Make your changes**
+4. 🧪 **Run the tests** (`cargo test`)
+5. 💅 **Ensure your code is formatted** (`cargo fmt`)
+6. 💾 **Commit your changes** (`git commit -m 'Add some amazing feature'`)
+7. 📤 **Push to the branch** (`git push origin <branch-name>`)
+8. 🔄 **Open a Pull Request**
+
+### 🎯 Issue Closing
+
+When working on issues, follow these guidelines:
+
+- **Merge Requests** should target and close the main issue they're addressing:
+- **Individual commits** should close sub-issues or tasks:
