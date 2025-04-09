@@ -3,7 +3,7 @@ name = "write_mode"
 description = "simple API for handling file write modes using either std lib or fs-err"
 repository = "https://github.com/Siiir/write_mode"
 license = "MIT"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2024"
 
 [dependencies]
