@@ -6,6 +6,10 @@ license = "MIT"
 version = "0.1.0"
 edition = "2024"
 
+[features]
+default = []
+append = []
+
 [dependencies]
 strum = { version = "0.27.1", features = ["derive"] }
 serde = { version = "1.0.219", features = ["derive"] }

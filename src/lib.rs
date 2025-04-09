@@ -1,4 +1,7 @@
-use std::{io, path::{Path, PathBuf}};
+use std::{
+    io,
+    path::{Path, PathBuf},
+};
 
 use serde::{Deserialize, Serialize};
 
@@ -50,6 +53,24 @@ pub enum WriteMode {
         ascii_case_insensitive
     )]
     ClassicWrite,
+
+    #[cfg(feature = "append")]
+    #[strum(
+        serialize = "ClassicAppend",
+        serialize = "Append",
+        serialize = "A",
+        ascii_case_insensitive
+    )]
+    ClassicAppend,
+
+    #[cfg(feature = "append")]
+    #[strum(
+        serialize = "AppendToExisting",
+        serialize = "Extend",
+        serialize = "E",
+        ascii_case_insensitive
+    )]
+    AppendToExisting,
 }
 
 impl WriteMode {
@@ -100,6 +121,14 @@ impl WriteMode {
             }
             Self::ClassicWrite => {
                 options.create_new(false).create(true);
+            }
+            #[cfg(feature = "append")]
+            Self::ClassicAppend => {
+                options.create_new(false).create(true).append(true);
+            }
+            #[cfg(feature = "append")]
+            Self::AppendToExisting => {
+                options.create_new(false).create(false).append(true);
             }
         }
 
