@@ -6,6 +6,17 @@ An open-source Rust library, which defines file write modes to allow easier deve
 
 Supports both `fs_err` and `std::fs`.
 
+## Examples
+```rust
+use std::io::Write;
+use write_mode::WriteMode;
+///
+let user_input = "o"; // Overwrite existing object (file content). Fail if doesn't exist.
+let mode: WriteMode = user_input.parse().unwrap(); // Parses many formats & shorthands.
+let mut file = mode.std_open("/dev/null").unwrap(); // Some existing file.
+file.write_all(b"Some new content for the file.").unwrap();
+```
+
 ## 📋 Prerequisites
 
 - 📦 `cargo` including `fmt` subcommand
