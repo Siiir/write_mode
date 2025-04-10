@@ -9,7 +9,8 @@ use serde::{Deserialize, Serialize};
 ///
 /// ## Variants
 /// - `CreateNew`: Creates a new file, fails if the file already exists.
-/// - `UpdateExisting`: Opens an existing file without creating a new one, fails if the file does not exist.
+/// - `UpdateExisting`: Opens an existing file without creating a new one,
+///  fails if the file does not exist.
 /// - `ClassicWrite`: Opens a file for writing, creating it if it doesn't exist.
 ///
 /// ## Examples

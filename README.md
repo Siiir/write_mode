@@ -10,7 +10,7 @@ Supports both `fs_err` and `std::fs`.
 ```rust
 use std::io::Write;
 use write_mode::WriteMode;
-///
+
 let user_input = "o"; // Overwrite existing object (file content). Fail if doesn't exist.
 let mode: WriteMode = user_input.parse().unwrap(); // Parses many formats & shorthands.
 let mut file = mode.std_open("/dev/null").unwrap(); // Some existing file.
@@ -55,8 +55,8 @@ This project uses a custom [rustfmt](https://github.com/rust-lang/rustfmt) confi
 | `reorder_imports`                | `true`      | Automatically sort `use` statements                |
 | `reorder_modules`                | `true`      | Automatically sort module declarations             |
 | `fn_params_layout`               | `"Tall"`    | Format function params vertically (one per line)   |
-| `edition`                        | `2015`      | Rust edition for parsing and formatting            |
-| `style_edition`                  | `2015`      | Edition used for formatting style rules            |
+| `edition`                        | `2024`      | Rust edition for parsing and formatting            |
+| `style_edition`                  | `2024`      | Edition used for formatting style rules            |
 
 ### 🧪 Formatting Check in CI
 
