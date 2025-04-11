@@ -1,4 +1,18 @@
-# Write Mode
+# write_mode [![Latest Version]][crates.io] [![License]][license] [![Documentation]][docs.rs] [![CI]][actions] [![Dependencies]][deps]
+<!-- [![Coverage]][codecov] -->
+
+[Latest Version]: https://img.shields.io/crates/v/write_mode.svg
+[crates.io]: https://crates.io/crates/write_mode
+[License]: https://img.shields.io/crates/l/write_mode.svg
+[license]: https://github.com/Siiir/write_mode/blob/main/LICENSE
+[Documentation]: https://docs.rs/write_mode/badge.svg
+[docs.rs]: https://docs.rs/write_mode
+[CI]: https://github.com/Siiir/write_mode/actions/workflows/check.yaml/badge.svg?branch=main
+[actions]: https://github.com/Siiir/write_mode/actions/workflows/check.yaml
+[Dependencies]: https://deps.rs/repo/github/Siiir/write_mode/status.svg
+[deps]: https://deps.rs/repo/github/Siiir/write_mode
+[Coverage]: https://codecov.io/gh/Siiir/write_mode/branch/main/graph/badge.svg
+[codecov]: https://codecov.io/gh/Siiir/write_mode
 
 ## 🎯 Overview
 
